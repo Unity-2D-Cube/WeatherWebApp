@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+@*         <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,16 @@
                     </form>
                 </div>
             </div>
-        </nav>
+        </nav> *@
+        <div class="navbar-form navbar-left">
+            @using (Html.BeginForm("Index", "Weather", FormMethod.Get, new { @class = "form-inline" }))
+            {
+                <div class="form-group">
+                    @Html.TextBox("city", null, new { @class = "form-control", placeholder = "Enter city name" })
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            }
+        </div>
 @*         <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WeatherWebApp</a>

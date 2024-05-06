@@ -33,7 +33,9 @@ namespace WeatherWebApp.Models
 
         [JsonProperty("icon")]
         public string Icon { get; set; }
-        
+
+        // Add the IconPath property
+        public string IconPath { get; set; }
     }
 
     public class Wind

@@ -9,11 +9,12 @@
     <p>Humidity: @Model.Main.Humidity %</p>
     <p>Wind Speed: @Model.Wind.Speed m/s</p>
 
+
     @if (Model.WeatherList != null && Model.WeatherList.Any())
     {
         @foreach (var weather in Model.WeatherList)
         {
-            <img src="@Url.Action("GetIconUrl", "Weather", new { iconId = weather.Icon })" alt="Weather Icon" />
+            <img src="@weather.IconPath" alt="Weather Icon" />
         }
     }
 }

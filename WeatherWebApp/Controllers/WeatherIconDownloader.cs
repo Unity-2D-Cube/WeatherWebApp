@@ -34,7 +34,7 @@
                 if (!File.Exists(iconFilePath))
                 {
                     // Download the icon image
-                    byte[] iconData = await _httpClient.GetByteArrayAsync($"{IconBaseUrl}{iconId}.png");
+                    byte[] iconData = await _httpClient.GetByteArrayAsync($"{IconBaseUrl}{iconId}@2x.png");
                     // Save the icon image to the file system
                     await File.WriteAllBytesAsync(iconFilePath, iconData);
                 }

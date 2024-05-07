@@ -66,10 +66,27 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - WeatherWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+            <a>Date and time now: <span id="currentDateTime"></span></a> &copy; 2024 - WeatherWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+            <script>
+                // Function to update the displayed time every second
+                function updateDateTime() {
+                    var currentDateTimeElement = document.getElementById("currentDateTime");
+                    if (currentDateTimeElement) {
+                        currentDateTimeElement.innerText = new Date().toLocaleString();
+                    }
+                }
+
+                // Call updateDateTime function initially to set the initial time
+                updateDateTime();
+
+                // Call updateDateTime function every second using setInterval
+                setInterval(updateDateTime, 1000);
+            </script>
+
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -17,6 +17,8 @@ namespace WeatherWebApp.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        // Add the CurrentTime property
+        public string CurrentTime { get; set; }
     }
 
     public class Main

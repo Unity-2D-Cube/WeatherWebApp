@@ -32,15 +32,22 @@
                 </div>
             </div>
         </nav> *@
-        <div class="navbar-form navbar-left">
-            @using (Html.BeginForm("Index", "Weather", FormMethod.Get, new { @class = "form-inline" }))
-            {
-                <div class="form-group">
-                    @Html.TextBox("city", null, new { @class = "form-control", placeholder = "Enter city name" })
+        <header>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="navbar-form">
+                        @using (Html.BeginForm("Index", "Weather", FormMethod.Get, new { @class = "form-inline" }))
+                        {
+                            <div class="form-group">
+                                @Html.TextBox("city", null, new { @class = "form-control", placeholder = "Enter city name" })
+                            </div>
+                            <button type="submit" class="btn btn-default ">Search</button>
+                        }
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-default">Search</button>
-            }
-        </div>
+            </div>
+        </header>
+
 @*         <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WeatherWebApp</a>
